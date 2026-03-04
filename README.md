@@ -14,7 +14,12 @@ okay gemini, ya tenemos eso, pero ahora haremos otras 3 paginas, haremos una de 
 ![alt text](image-5.png)
 
 ## ANDROID
-
+<img width="214" height="366" alt="image" src="https://github.com/user-attachments/assets/2725d53f-d688-4214-b842-4744bc7020da" />
+<img width="217" height="378" alt="image" src="https://github.com/user-attachments/assets/9b74484b-e138-4087-9f18-e870e0629f24" />
+<img width="219" height="358" alt="image" src="https://github.com/user-attachments/assets/12fa8982-81ea-43d9-b054-dadd33acd92c" />
+<img width="219" height="370" alt="image" src="https://github.com/user-attachments/assets/05c2e0d6-a224-421f-888b-9e97918d9181" />
+<img width="219" height="371" alt="image" src="https://github.com/user-attachments/assets/9f7d0098-6545-4efb-b19f-8f7d40c67b88" />
+<img width="219" height="370" alt="image" src="https://github.com/user-attachments/assets/54f8ea77-08d8-40d6-8db5-ecdc5c18e43c" />
 
 
 
