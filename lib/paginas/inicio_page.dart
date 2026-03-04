@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// Importamos usando la ruta relativa para usar purpleTheme y CustomBottomBar
-import '../main.dart';
+import 'package:myapp/paginas/custom_bar.dart';
+import 'package:myapp/utils/constants.dart';
 
 class InicioPage extends StatelessWidget {
   const InicioPage({super.key});
@@ -11,6 +11,7 @@ class InicioPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: purpleTheme,
+        // Usando leading en lugar de automaticallyImplyLeading para mantener tu diseño
         leading: const Icon(attractionsIcon, color: Colors.white),
         title: const Text("Jardín de las Maravillas", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
         centerTitle: true,
@@ -71,7 +72,8 @@ class InicioPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: const CustomBottomBar(),
+      // Adaptado para usar la barra de navegación correcta
+      bottomNavigationBar: const CustomBottomAppBar(currentPage: 'Inicio'),
     );
   }
 }

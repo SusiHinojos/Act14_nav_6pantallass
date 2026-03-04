@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../main.dart';
+import '../utils/constants.dart';
 
 class RegistroPage extends StatefulWidget {
   const RegistroPage({super.key});
@@ -27,20 +27,36 @@ class _RegistroPageState extends State<RegistroPage> {
                 controller: _fechaController,
                 decoration: InputDecoration(labelText: "Fecha de nacimiento", prefixIcon: const Icon(Icons.calendar_today, color: purpleTheme), filled: true, fillColor: purpleLight, border: OutlineInputBorder(borderRadius: BorderRadius.circular(12), borderSide: BorderSide.none)),
                 validator: (v) => v!.isEmpty ? "Campo obligatorio" : null,
+                onTap: () async {
+                  // Esto evita que el teclado aparezca
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  // Muestra el selector de fecha
+                  DateTime? picked = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime.now(),
+                  );
+                  if (picked != null) {
+                    // Formatea la fecha y la asigna al controlador
+                    _fechaController.text = "${picked.day}/${picked.month}/${picked.year}";
+                  }
+                },
               ),
               const SizedBox(height: 15),
               _buildField("Correo", Icons.email, (v) => !v!.contains('@') ? "Correo inválido" : null),
               _buildField("Teléfono", Icons.phone, (v) => v!.length < 10 ? "10 dígitos requeridos" : null, type: TextInputType.phone),
               const SizedBox(height: 30),
               ElevatedButton(
-                style: ElevatedButton.styleFrom(backgroundColor: purpleTheme, minimumSize: const Size(double.infinity, 50)),
+                style: ElevatedButton.styleFrom(backgroundColor: purpleTheme, foregroundColor: Colors.white, minimumSize: const Size(double.infinity, 50)),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
+                    // La variable isLoggedIn la importamos de constants.dart
                     isLoggedIn = true;
                     Navigator.pushReplacementNamed(context, '/inicio');
                   }
                 },
-                child: const Text('CREAR CUENTA', style: TextStyle(color: Colors.white)),
+                child: const Text('CREAR CUENTA'),
               ),
             ],
           ),

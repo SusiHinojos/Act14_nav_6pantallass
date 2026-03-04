@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// Importamos usando la ruta relativa para evitar errores de nombre de proyecto
-import '../main.dart';
+import 'package:myapp/paginas/custom_bar.dart';
+import 'package:myapp/utils/constants.dart';
 
 class AtraccionesPage extends StatelessWidget {
   const AtraccionesPage({super.key});
@@ -67,7 +67,8 @@ class AtraccionesPage extends StatelessWidget {
           );
         },
       ),
-      bottomNavigationBar: const CustomBottomBar(),
+      // Adaptado para usar la barra de navegación correcta
+      bottomNavigationBar: const CustomBottomAppBar(currentPage: 'Atracciones'),
     );
   }
 }
